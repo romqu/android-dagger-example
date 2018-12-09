@@ -7,7 +7,6 @@ class DaggerExampleApp: Application() {
     override fun onCreate() {
         super.onCreate()
 
-
     }
 
 }
