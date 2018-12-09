@@ -1,8 +1,14 @@
 package de.romqu.dagger_example.app
 
 import android.app.Application
+import de.romqu.dagger_example.logic.AppLogic
+import de.romqu.dagger_example.logic.AppLogic_Factory
+import javax.inject.Inject
 
 class DaggerExampleApp : Application() {
+
+    @Inject
+    lateinit var appLogic: AppLogic
 
     val appComponent by lazy {
 
@@ -10,8 +16,13 @@ class DaggerExampleApp : Application() {
             .create()
     }
 
+
     override fun onCreate() {
         super.onCreate()
+
+        appComponent.inject(this)
+
+        appLogic.execute()
     }
 
 }

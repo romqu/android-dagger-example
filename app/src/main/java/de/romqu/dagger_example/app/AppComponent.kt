@@ -5,4 +5,6 @@ import javax.inject.Singleton
 
 @Component
 interface AppComponent {
+
+    fun inject(daggerExampleApp: DaggerExampleApp)
 }
