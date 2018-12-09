@@ -2,7 +2,6 @@ package de.romqu.dagger_example.app
 
 import android.app.Application
 import de.romqu.dagger_example.logic.AppLogic
-import de.romqu.dagger_example.logic.AppLogic_Factory
 import javax.inject.Inject
 
 class DaggerExampleApp : Application() {
