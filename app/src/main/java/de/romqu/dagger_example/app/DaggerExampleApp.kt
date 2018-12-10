@@ -19,10 +19,15 @@ class DaggerExampleApp : Application() {
     @field:Named("HelloTwo")
     lateinit var helloClassTwo: AppModule.Hello
 
+    @Inject
+    lateinit var helloClassContext: AppModule.HelloContext
+
     private val appComponent by lazy {
 
         DaggerAppComponent
-            .create()
+            .builder()
+            .appModule(AppModule(applicationContext))
+            .build()
     }
 
     override fun onCreate() {
@@ -34,7 +39,9 @@ class DaggerExampleApp : Application() {
 
         Log.d(
             DaggerExampleApp::class.java.simpleName,
-            "${helloClass.text} and ${helloClassTwo.text}"
+            "${helloClass.text} " +
+                    "and ${helloClassTwo.text} " +
+                    "and ${helloClassContext.context.packageName}/"
         )
 
 
