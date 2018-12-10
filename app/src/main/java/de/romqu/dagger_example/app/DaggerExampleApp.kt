@@ -10,21 +10,10 @@ class DaggerExampleApp : Application() {
     @Inject
     lateinit var appLogicInject: AppLogic
 
-    @Inject
-    lateinit var provider: Provider<AppLogic>
-
     private val appComponent by lazy {
 
         DaggerAppComponent
             .create()
-    }
-
-    private val appLogicComponent by lazy {
-        appComponent.appLogic()
-    }
-
-    private val appLogicProvider by lazy {
-        provider.get()
     }
 
     override fun onCreate() {
@@ -33,10 +22,6 @@ class DaggerExampleApp : Application() {
         appComponent.inject(this)
 
         appLogicInject.execute()
-
-        appLogicComponent.execute()
-
-        appLogicProvider.execute()
 
     }
 
