@@ -3,7 +3,6 @@ package de.romqu.dagger_example.app
 import android.app.Application
 import de.romqu.dagger_example.logic.AppLogic
 import javax.inject.Inject
-import javax.inject.Provider
 
 class DaggerExampleApp : Application() {
 
