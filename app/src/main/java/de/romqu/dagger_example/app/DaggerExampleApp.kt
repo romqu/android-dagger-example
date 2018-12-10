@@ -22,7 +22,7 @@ class DaggerExampleApp : Application() {
     @Inject
     lateinit var helloClassContext: AppModule.HelloContext
 
-    private val appComponent by lazy {
+    val appComponent by lazy {
 
         DaggerAppComponent
             .builder()
