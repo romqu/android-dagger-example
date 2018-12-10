@@ -3,7 +3,7 @@ package de.romqu.dagger_example.app
 import dagger.Component
 import javax.inject.Singleton
 
-@Component
+@Component(modules = [AppModule::class])
 @Singleton
 interface AppComponent {
 
